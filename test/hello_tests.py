@@ -16,7 +16,7 @@ class HelloTests(unittest.TestCase):
         #self.testbed.deactivate()
 
     def testGetHelloWorld(self):
-        response = self.testapp.get('/hello/')
+        response = self.testapp.get('/hello')
         
         self.assertEqual(response.status_int, 200)
         self.assertEqual(response.normal_body, 'Hello, World!')
