@@ -1,7 +1,9 @@
 import unittest
 import webapp2
 import webtest
-from cykelapp.cykel_app import CykelApp
+from cykelapp.webapp.cykel_app import CykelApp
+from cykelapp.webapp.hello_handler import HelloHandler
+
 
 class HelloTests(unittest.TestCase):
     def setUp(self):
