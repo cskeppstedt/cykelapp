@@ -5,6 +5,9 @@ api_version: 1
 threadsafe: true
 
 handlers:
+- url: /cronjobs/citybikes
+  script: cronjobs.cronjobs_app.application
+  login: admin
 - url: /.*
   script: webapp.cykel_app.application
 
