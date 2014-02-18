@@ -19,8 +19,6 @@ class ApiRequestHandler(webapp2.RequestHandler):
     def sendModels(self, json_prop_name, models):
         if models is None:
             self.send404()
-        elif len(models) == 0:
-            self.send404()
         else:
             model_dicts = [m.to_dict() for m in models]
             self.sendJsonDict({ json_prop_name : model_dicts })
