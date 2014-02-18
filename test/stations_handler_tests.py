@@ -4,9 +4,9 @@ import webapp2
 import webtest
 from google.appengine.api import memcache
 from google.appengine.ext import ndb, testbed
-from cykelapp.webapp.cykel_app import CykelApp
-from cykelapp.webapp.stations_handler import StationsHandler
-from cykelapp.models.station_model import StationModel
+from webapp.cykel_app import CykelApp
+from webapp.stations_handler import StationsHandler
+from models.station_model import StationModel
 
 
 class StationsHandlerTests(unittest.TestCase):

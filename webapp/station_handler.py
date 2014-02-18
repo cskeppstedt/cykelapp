@@ -2,8 +2,8 @@ import json
 import webapp2
 from google.appengine.api import memcache
 from google.appengine.ext import ndb
-from cykelapp.models.station_model import StationModel
-from cykelapp.webapp.api_request_handler import ApiRequestHandler
+from models.station_model import StationModel
+from webapp.api_request_handler import ApiRequestHandler
 
 
 class StationHandler(ApiRequestHandler):
