@@ -36,8 +36,8 @@ class CronjobCitybikesTests(unittest.TestCase):
     def testGet(self):
         json_count = CitybikesHandler.api_service.get_station_objects()
         # repeat to see that models are added once only
-        response = self.testapp.get('/citybikes')
-        response = self.testapp.get('/citybikes')
+        response = self.testapp.get('/cronjobs/citybikes')
+        response = self.testapp.get('/cronjobs/citybikes')
         self.assertEqual(response.status_int, 200)
         models = [m for m in StationModel.query()]
         self.assertEqual(len(json_count), len(models))
