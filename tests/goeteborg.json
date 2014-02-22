@@ -1,0 +1,572 @@
+[
+  {
+    "bikes": 0, 
+    "name": "CHALMERSPLATSEN", 
+    "idx": 0, 
+    "lat": 57689790, 
+    "timestamp": "2014-02-22T16:09:59.251Z", 
+    "lng": 11973050, 
+    "id": 0, 
+    "free": 30
+  }, 
+  {
+    "bikes": 0, 
+    "name": "CHALMERS TV\u00c4RGATA", 
+    "idx": 1, 
+    "lat": 57689530, 
+    "timestamp": "2014-02-22T16:09:59.252Z", 
+    "lng": 11979740, 
+    "id": 1, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "KUNGSTORGET", 
+    "idx": 2, 
+    "lat": 57702542, 
+    "timestamp": "2014-02-22T16:09:59.252Z", 
+    "lng": 11968875, 
+    "id": 2, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "POSTGATAN", 
+    "idx": 3, 
+    "lat": 57707476, 
+    "timestamp": "2014-02-22T16:09:59.253Z", 
+    "lng": 11963926, 
+    "id": 3, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "BOHUSGATAN", 
+    "idx": 4, 
+    "lat": 57704520, 
+    "timestamp": "2014-02-22T16:09:59.253Z", 
+    "lng": 11984298, 
+    "id": 4, 
+    "free": 19
+  }, 
+  {
+    "bikes": 0, 
+    "name": "BRUNNSGATAN", 
+    "idx": 5, 
+    "lat": 57693517, 
+    "timestamp": "2014-02-22T16:09:59.253Z", 
+    "lng": 11958559, 
+    "id": 5, 
+    "free": 18
+  }, 
+  {
+    "bikes": 0, 
+    "name": "OLOF PALMES PLATS", 
+    "idx": 6, 
+    "lat": 57700662, 
+    "timestamp": "2014-02-22T16:09:59.254Z", 
+    "lng": 11953640, 
+    "id": 6, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "L\u00c4RAREGATAN/MOLINSGATAN", 
+    "idx": 7, 
+    "lat": 57694180, 
+    "timestamp": "2014-02-22T16:09:59.254Z", 
+    "lng": 11974510, 
+    "id": 7, 
+    "free": 25
+  }, 
+  {
+    "bikes": 0, 
+    "name": "G\u00c5RDATORGET", 
+    "idx": 8, 
+    "lat": 57704675, 
+    "timestamp": "2014-02-22T16:09:59.255Z", 
+    "lng": 11992441, 
+    "id": 8, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "VALAND", 
+    "idx": 9, 
+    "lat": 57700324, 
+    "timestamp": "2014-02-22T16:09:59.255Z", 
+    "lng": 11973429, 
+    "id": 9, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "KRUTHUSGATAN", 
+    "idx": 10, 
+    "lat": 57711850, 
+    "timestamp": "2014-02-22T16:09:59.256Z", 
+    "lng": 11980600, 
+    "id": 10, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "KRISTINELUNDSGATAN", 
+    "idx": 11, 
+    "lat": 57699939, 
+    "timestamp": "2014-02-22T16:09:59.256Z", 
+    "lng": 11976176, 
+    "id": 11, 
+    "free": 15
+  }, 
+  {
+    "bikes": 0, 
+    "name": "KUNGSGATAN/TELEKASERN", 
+    "idx": 12, 
+    "lat": 57703370, 
+    "timestamp": "2014-02-22T16:09:59.257Z", 
+    "lng": 11960120, 
+    "id": 12, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "DOMKYRKAN", 
+    "idx": 13, 
+    "lat": 57704340, 
+    "timestamp": "2014-02-22T16:09:59.257Z", 
+    "lng": 11963880, 
+    "id": 13, 
+    "free": 18
+  }, 
+  {
+    "bikes": 0, 
+    "name": "KANALTORGET", 
+    "idx": 14, 
+    "lat": 57710396, 
+    "timestamp": "2014-02-22T16:09:59.257Z", 
+    "lng": 11966421, 
+    "id": 14, 
+    "free": 25
+  }, 
+  {
+    "bikes": 0, 
+    "name": "FOLKUNGAGATAN", 
+    "idx": 15, 
+    "lat": 57708840, 
+    "timestamp": "2014-02-22T16:09:59.258Z", 
+    "lng": 11984720, 
+    "id": 15, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "KAPONJ\u00c4RSGATAN", 
+    "idx": 16, 
+    "lat": 57698750, 
+    "timestamp": "2014-02-22T16:09:59.258Z", 
+    "lng": 11956490, 
+    "id": 16, 
+    "free": 25
+  }, 
+  {
+    "bikes": 0, 
+    "name": "SLUSSPLATSEN", 
+    "idx": 17, 
+    "lat": 57707316, 
+    "timestamp": "2014-02-22T16:09:59.259Z", 
+    "lng": 11973448, 
+    "id": 17, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "KORSV\u00c4GEN", 
+    "idx": 18, 
+    "lat": 57696555, 
+    "timestamp": "2014-02-22T16:09:59.259Z", 
+    "lng": 11987833, 
+    "id": 18, 
+    "free": 25
+  }, 
+  {
+    "bikes": 0, 
+    "name": "ESPERANTOPLATSEN", 
+    "idx": 19, 
+    "lat": 57702793, 
+    "timestamp": "2014-02-22T16:09:59.26Z", 
+    "lng": 11955461, 
+    "id": 19, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "LISEBERG STATION", 
+    "idx": 20, 
+    "lat": 57697923, 
+    "timestamp": "2014-02-22T16:09:59.26Z", 
+    "lng": 11995107, 
+    "id": 20, 
+    "free": 30
+  }, 
+  {
+    "bikes": 0, 
+    "name": "SCANDINAVIUM", 
+    "idx": 21, 
+    "lat": 57700094, 
+    "timestamp": "2014-02-22T16:09:59.261Z", 
+    "lng": 11987908, 
+    "id": 21, 
+    "free": 30
+  }, 
+  {
+    "bikes": 0, 
+    "name": "SLOTTSKOGEN/PLIKTA", 
+    "idx": 22, 
+    "lat": 57689983, 
+    "timestamp": "2014-02-22T16:09:59.261Z", 
+    "lng": 11947047, 
+    "id": 22, 
+    "free": 25
+  }, 
+  {
+    "bikes": 0, 
+    "name": "GUSTAF ADOLFS TORG", 
+    "idx": 23, 
+    "lat": 57707233, 
+    "timestamp": "2014-02-22T16:09:59.262Z", 
+    "lng": 11967502, 
+    "id": 23, 
+    "free": 40
+  }, 
+  {
+    "bikes": 0, 
+    "name": "BASTIONSPLATSEN", 
+    "idx": 24, 
+    "lat": 57704263, 
+    "timestamp": "2014-02-22T16:09:59.262Z", 
+    "lng": 11972077, 
+    "id": 24, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "ULLEVIGATAN", 
+    "idx": 25, 
+    "lat": 57707048, 
+    "timestamp": "2014-02-22T16:09:59.262Z", 
+    "lng": 11983638, 
+    "id": 25, 
+    "free": 25
+  }, 
+  {
+    "bikes": 0, 
+    "name": "CARLANDERSPLATSEN", 
+    "idx": 26, 
+    "lat": 57693120, 
+    "timestamp": "2014-02-22T16:09:59.263Z", 
+    "lng": 11986610, 
+    "id": 26, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "PACKHUSPLATSEN", 
+    "idx": 27, 
+    "lat": 57706767, 
+    "timestamp": "2014-02-22T16:09:59.263Z", 
+    "lng": 11959101, 
+    "id": 27, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "EKLANDA/UTLANDAGATAN", 
+    "idx": 28, 
+    "lat": 57690320, 
+    "timestamp": "2014-02-22T16:09:59.264Z", 
+    "lng": 11988540, 
+    "id": 28, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "LINN\u00c9PLATSEN", 
+    "idx": 29, 
+    "lat": 57690278, 
+    "timestamp": "2014-02-22T16:09:59.264Z", 
+    "lng": 11951650, 
+    "id": 29, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "KAPELLPLATSEN", 
+    "idx": 30, 
+    "lat": 57693580, 
+    "timestamp": "2014-02-22T16:09:59.264Z", 
+    "lng": 11971990, 
+    "id": 30, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "F\u00d6RENINGSGATAN", 
+    "idx": 31, 
+    "lat": 57694554, 
+    "timestamp": "2014-02-22T16:09:59.265Z", 
+    "lng": 11961987, 
+    "id": 31, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "HAGABION", 
+    "idx": 32, 
+    "lat": 57696837, 
+    "timestamp": "2014-02-22T16:09:59.265Z", 
+    "lng": 11951009, 
+    "id": 32, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "ALSTR\u00d6MER/FRIGGAGATAN", 
+    "idx": 33, 
+    "lat": 57711190, 
+    "timestamp": "2014-02-22T16:09:59.266Z", 
+    "lng": 11987980, 
+    "id": 33, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "ROSENLUNDSPLATSEN", 
+    "idx": 34, 
+    "lat": 57700685, 
+    "timestamp": "2014-02-22T16:09:59.266Z", 
+    "lng": 11960571, 
+    "id": 34, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "HEDEN/STENSTUREGATAN", 
+    "idx": 35, 
+    "lat": 57702955, 
+    "timestamp": "2014-02-22T16:09:59.267Z", 
+    "lng": 11980210, 
+    "id": 35, 
+    "free": 30
+  }, 
+  {
+    "bikes": 0, 
+    "name": "D\u00c4MMEPLATSEN", 
+    "idx": 36, 
+    "lat": 57707010, 
+    "timestamp": "2014-02-22T16:09:59.267Z", 
+    "lng": 11990390, 
+    "id": 36, 
+    "free": 14
+  }, 
+  {
+    "bikes": 0, 
+    "name": "DROTTNINGTORGET", 
+    "idx": 37, 
+    "lat": 57708074, 
+    "timestamp": "2014-02-22T16:09:59.267Z", 
+    "lng": 11972737, 
+    "id": 37, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "BERZELIIGATAN", 
+    "idx": 38, 
+    "lat": 57697940, 
+    "timestamp": "2014-02-22T16:09:59.268Z", 
+    "lng": 11980960, 
+    "id": 38, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "GR\u00d6NSAKSTORGET", 
+    "idx": 39, 
+    "lat": 57702459, 
+    "timestamp": "2014-02-22T16:09:59.268Z", 
+    "lng": 11965179, 
+    "id": 39, 
+    "free": 0
+  }, 
+  {
+    "bikes": 0, 
+    "name": "BERGAKUNGEN", 
+    "idx": 40, 
+    "lat": 57702135, 
+    "timestamp": "2014-02-22T16:09:59.269Z", 
+    "lng": 11985035, 
+    "id": 40, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "STORAN", 
+    "idx": 41, 
+    "lat": 57702482, 
+    "timestamp": "2014-02-22T16:09:59.269Z", 
+    "lng": 11971552, 
+    "id": 41, 
+    "free": 40
+  }, 
+  {
+    "bikes": 0, 
+    "name": "FRIG\u00c5NGSGATAN", 
+    "idx": 42, 
+    "lat": 57697821, 
+    "timestamp": "2014-02-22T16:09:59.27Z", 
+    "lng": 11952905, 
+    "id": 42, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "KASTELLGATAN", 
+    "idx": 43, 
+    "lat": 57693029, 
+    "timestamp": "2014-02-22T16:09:59.27Z", 
+    "lng": 11955692, 
+    "id": 43, 
+    "free": 20
+  }, 
+  {
+    "bikes": 1, 
+    "name": "LILLA BOMMEN", 
+    "idx": 44, 
+    "lat": 57711547, 
+    "timestamp": "2014-02-22T16:09:59.27Z", 
+    "lng": 11966574, 
+    "id": 44, 
+    "free": 14
+  }, 
+  {
+    "bikes": 0, 
+    "name": "VASAGATAN/HEDEN", 
+    "idx": 45, 
+    "lat": 57701419, 
+    "timestamp": "2014-02-22T16:09:59.271Z", 
+    "lng": 11976600, 
+    "id": 45, 
+    "free": 25
+  }, 
+  {
+    "bikes": 0, 
+    "name": "POSTHUSET/\u00c5KAREPLATSEN", 
+    "idx": 46, 
+    "lat": 57707647, 
+    "timestamp": "2014-02-22T16:09:59.271Z", 
+    "lng": 11976117, 
+    "id": 46, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "SKANSTORGET", 
+    "idx": 47, 
+    "lat": 57695909, 
+    "timestamp": "2014-02-22T16:09:59.272Z", 
+    "lng": 11958548, 
+    "id": 47, 
+    "free": 30
+  }, 
+  {
+    "bikes": 0, 
+    "name": "HAGAPARKEN", 
+    "idx": 48, 
+    "lat": 57697984, 
+    "timestamp": "2014-02-22T16:09:59.272Z", 
+    "lng": 11962405, 
+    "id": 48, 
+    "free": 25
+  }, 
+  {
+    "bikes": 0, 
+    "name": "ENGELBREKTSGATAN", 
+    "idx": 49, 
+    "lat": 57698410, 
+    "timestamp": "2014-02-22T16:09:59.272Z", 
+    "lng": 11976940, 
+    "id": 49, 
+    "free": 15
+  }, 
+  {
+    "bikes": 0, 
+    "name": "\u00c5V\u00c4GEN", 
+    "idx": 50, 
+    "lat": 57701249, 
+    "timestamp": "2014-02-22T16:09:59.273Z", 
+    "lng": 11992191, 
+    "id": 50, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "HEDEN SYD", 
+    "idx": 51, 
+    "lat": 57699941, 
+    "timestamp": "2014-02-22T16:09:59.273Z", 
+    "lng": 11979867, 
+    "id": 51, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "GIBRALTARG/EKLANDAG", 
+    "idx": 52, 
+    "lat": 57685420, 
+    "timestamp": "2014-02-22T16:09:59.274Z", 
+    "lng": 11983220, 
+    "id": 52, 
+    "free": 25
+  }, 
+  {
+    "bikes": 0, 
+    "name": "KORSV\u00c4GEN /S\u00d6DRA V\u00c4GEN", 
+    "idx": 53, 
+    "lat": 57696916, 
+    "timestamp": "2014-02-22T16:09:59.274Z", 
+    "lng": 11985703, 
+    "id": 53, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "MOLINSGATAN", 
+    "idx": 54, 
+    "lat": 57696910, 
+    "timestamp": "2014-02-22T16:09:59.274Z", 
+    "lng": 11972340, 
+    "id": 54, 
+    "free": 20
+  }, 
+  {
+    "bikes": 0, 
+    "name": "NILS-ERICSSON TERMINALEN", 
+    "idx": 55, 
+    "lat": 57709752, 
+    "timestamp": "2014-02-22T16:09:59.275Z", 
+    "lng": 11970787, 
+    "id": 55, 
+    "free": 35
+  }, 
+  {
+    "bikes": 0, 
+    "name": "VASAGATAN/SCHILLERSKA", 
+    "idx": 56, 
+    "lat": 57698265, 
+    "timestamp": "2014-02-22T16:09:59.275Z", 
+    "lng": 11967115, 
+    "id": 56, 
+    "free": 25
+  }
+]

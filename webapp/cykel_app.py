@@ -12,5 +12,4 @@ class CykelApp:
             (r'/stations/(\d+)', StationHandler)
         ], debug=True)
 
-cykel_app = CykelApp()
-application = cykel_app.make_app()
+application = CykelApp().make_app()

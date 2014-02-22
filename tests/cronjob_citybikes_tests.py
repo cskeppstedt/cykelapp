@@ -10,11 +10,19 @@ from models.station_model import StationModel
 from cronjobs.citybikes_handler import CitybikesHandler
 
 
+class CitybikesTestApi:
+    def get_station_objects(self):
+        f = open('tests/goeteborg.json', 'r')
+        stations = json.load(f)
+        f.close()
+        return stations
+
 class CronjobCitybikesTests(unittest.TestCase):
     def setUp(self):
         # set up the test app
         app = CronjobsApp()
         self.testapp = webtest.TestApp(app.make_app())
+        CitybikesHandler.api_service = CitybikesTestApi()
         
         # set up the testbed
         self.testbed = testbed.Testbed()
@@ -26,6 +34,11 @@ class CronjobCitybikesTests(unittest.TestCase):
         self.testbed.deactivate()
 
     def testGet(self):
+        json_count = CitybikesHandler.api_service.get_station_objects()
+        # repeat to see that models are added once only
+        response = self.testapp.get('/citybikes')
         response = self.testapp.get('/citybikes')
         self.assertEqual(response.status_int, 200)
+        models = [m for m in StationModel.query()]
+        self.assertEqual(len(json_count), len(models))
 

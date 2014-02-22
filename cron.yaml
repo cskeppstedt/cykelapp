@@ -1,9 +1,9 @@
 cron:
 - description: Update stations from citybikes API (daytime)
-  url: /tasks/citybikes
+  url: /cronjobs/citybikes
   schedule: every 1 minutes from 06:00 to 22:00
   timezone: Europe/Stockholm
 - description: Update stations from citybikes API (nighttime)
-  url: /tasks/citybikes
+  url: /cronjobs/citybikes
   schedule: every 15 minutes from 22:00 to 06:00
   timezone: Europe/Stockholm
