@@ -8,6 +8,15 @@ handlers:
 - url: /cronjobs/.*
   script: cronjobs.cronjobs_app.application
   login: admin
+
+- url: /favicon.ico
+  static_files: static/favicon.ico
+  upload: static/favicon.ico
+
+- url: /robots.txt
+  static_files: static/robots.txt
+  upload: static/robots.txt
+
 - url: /.*
   script: webapp.cykel_app.application
 
