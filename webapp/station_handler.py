@@ -9,4 +9,4 @@ from webapp.api_request_handler import ApiRequestHandler
 class StationHandler(ApiRequestHandler):
     def get(self, station_id):
         model = StationModel.query(StationModel.api_id==station_id).get()
-        self.sendModel('station', model)
+        self.sendModel('station', model, last_modified=model.timestamp)

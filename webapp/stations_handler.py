@@ -9,5 +9,6 @@ from webapp.api_request_handler import ApiRequestHandler
 class StationsHandler(ApiRequestHandler):
     def get(self):
         models = [m for m in StationModel.query()]
-        self.sendModels('stations', models)
+        lm = max(map(lambda m: m.timestamp, models))
+        self.sendModels('stations', models, last_modified = lm)
 
