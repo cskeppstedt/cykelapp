@@ -5,11 +5,15 @@ from station_handler import StationHandler
 
 
 class CykelApp:
+    instance = None
     def make_app(self):
-        return webapp2.WSGIApplication([
-            (r'/hello',          HelloHandler),
-            (r'/stations',       StationsHandler),
-            (r'/stations/(\d+)', StationHandler)
-        ], debug=True)
+        if self.instance == None:
+            self.instance = webapp2.WSGIApplication([
+                (r'/hello',          HelloHandler),
+                (r'/stations',       StationsHandler),
+                (r'/stations/(\d+)', StationHandler)
+            ], debug=True)
+
+        return self.instance
 
 application = CykelApp().make_app()

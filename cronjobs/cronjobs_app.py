@@ -3,9 +3,13 @@ from citybikes_handler import CitybikesHandler
 
 
 class CronjobsApp:
+    instance = None
     def make_app(self):
-        return webapp2.WSGIApplication([
-            (r'/cronjobs/citybikes', CitybikesHandler),
-        ], debug=True)
+        if self.instance == None:
+            self.instance = webapp2.WSGIApplication([
+                (r'/cronjobs/citybikes', CitybikesHandler),
+            ], debug=True)
+
+        return self.instance
 
 application = CronjobsApp().make_app()

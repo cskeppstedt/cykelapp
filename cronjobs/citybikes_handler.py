@@ -1,8 +1,10 @@
 import json
 import sys
 import datetime
+import logging
 import urllib2
 import webapp2
+from hashlib import md5
 from google.appengine.api import memcache
 from google.appengine.ext import ndb
 from models.station_model import StationModel
@@ -30,15 +32,48 @@ class CitybikesHandler(webapp2.RequestHandler):
     def get(self):
         stations = self.api_service.get_station_objects()
         for s in stations:
-            s_id = str(s['id'])
-            s_lat = float(s['lat']) / 1000000.0
-            s_lng = float(s['lng']) / 1000000.0
-            model = StationModel.get_or_insert(s_id)
-            model.api_id = s_id
-            model.name = s['name'].strip().title()
-            model.bikes = int(s['bikes'])
-            model.free = int(s['free'])
-            model.location = ndb.GeoPt(s_lat, s_lng)
-            model.timestamp = datetime.datetime.strptime(s['timestamp'], '%Y-%m-%dT%H:%M:%S.%fZ')
+            s = self.format_station(s)
+            model = StationModel.get_or_insert(s['id'])
+            if not self.station_has_changed(s, model):
+                continue
+
+            model.api_id = s['id']
+            model.name = s['name']
+            model.bikes = s['bikes']
+            model.free = s['free']
+            model.location = s['location']
+            model.timestamp = s['timestamp']
             model.put()
 
+    def format_station(self, station):
+        lat = float(station['lat']) / 1000000.0
+        lon = float(station['lng']) / 1000000.0
+        fmt = '%Y-%m-%dT%H:%M:%S.%fZ'
+        ts  = station['timestamp']
+
+        station['name'] = station['name'].strip().title()
+        station['id'] = str(station['id'])
+        station['bikes'] = int(station['bikes'])
+        station['free']= int(station['free'])
+        station['location'] = ndb.GeoPt(lat,lon)
+        station['timestamp'] = datetime.datetime.strptime(ts, fmt)
+        return station
+    
+    def station_has_changed(self, station, model):
+        if model.api_id == None or model.api_id == "":
+            logging.info('Updating %s: this is a new entry', station['id'])
+            return True
+        if station['name'] != model.name:
+            logging.info('Updating %s: name changed from %s to %s', station['id'], model.name or '', station['name'])
+            return True
+        if station['bikes'] != model.bikes:
+            logging.info('Updating %s: bikes changed from %d to %d', station['id'], model.bikes or 0, station['bikes'])
+            return True
+        if station['free'] != model.free:
+            logging.info('Updating %s: free changed from %d to %d', station['id'], model.free or 0, station['free'])
+            return True
+        if station['location'] != model.location and model.location != None:
+            logging.info('Updating %s: location changed from (%s) to (%s)', station['id'], str(model.location), str(station['location']))
+            return True
+
+        return False
