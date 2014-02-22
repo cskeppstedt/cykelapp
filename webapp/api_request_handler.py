@@ -9,6 +9,8 @@ class JsonHandler:
     def handler(self, obj):
         if isinstance(obj, datetime.datetime) or isinstance(obj, datetime.date):
             return obj.isoformat()
+        elif isinstance(obj, ndb.GeoPt):
+            return {"lat": obj.lat, "lon": obj.lon}
         else:
             return None
 
