@@ -29,7 +29,7 @@ class StationsHandlerTests(unittest.TestCase):
         self.testbed.deactivate()
 
     def testGetStations(self):
-        response = self.testapp.get('/stations')
+        response = self.testapp.get('/api/stations')
         self.assertEqual(response.status_int, 200)
         
         decoded = json.loads(response.body)

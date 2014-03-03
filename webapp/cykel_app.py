@@ -9,9 +9,8 @@ class CykelApp:
     def make_app(self):
         if self.instance == None:
             self.instance = webapp2.WSGIApplication([
-                (r'/hello',          HelloHandler),
-                (r'/stations',       StationsHandler),
-                (r'/stations/(\d+)', StationHandler)
+                (r'/api/stations',       StationsHandler),
+                (r'/api/stations/(\d+)', StationHandler)
             ], debug=True)
 
         return self.instance

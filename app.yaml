@@ -17,15 +17,27 @@ handlers:
   static_files: static/robots.txt
   upload: static/robots.txt
 
-- url: /index.html
-  static_files: frontend/index.html
-  upload: frontend/index.html
+- url: /css/(.*\.css)
+  mime_type: text/css
+  static_files: frontend/build/css/\1
+  upload: frontend/build/css/(.*\.css)
 
-- url: /js/.*
-  static_dir: frontend/build/js
+- url: /js/(.*\.js)
+  mime_type: text/javscript
+  static_files: frontend/build/js/\1
+  upload: frontend/build/js/(.*\.js)
 
-- url: /.*
+- url: /(.*\.html)
+  mime_type: text/html
+  static_files: frontend/html/\1
+  upload: frontend/html/(.*\.html)
+
+- url: /api/.*
   script: webapp.cykel_app.application
+
+- url: /
+  static_files: frontend/html/index.html
+  upload: frontend/html/index.html
 
 libraries:
 - name: webapp2
