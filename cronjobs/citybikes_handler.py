@@ -48,17 +48,24 @@ class CitybikesHandler(webapp2.RequestHandler):
     def format_station(self, station):
         lat = float(station['lat']) / 1000000.0
         lon = float(station['lng']) / 1000000.0
-        fmt = '%Y-%m-%dT%H:%M:%S.%fZ'
-        ts  = station['timestamp']
+        
 
         station['name'] = station['name'].strip().title()
         station['id'] = str(station['id'])
         station['bikes'] = int(station['bikes'])
         station['free']= int(station['free'])
         station['location'] = ndb.GeoPt(lat,lon)
-        station['timestamp'] = datetime.datetime.strptime(ts, fmt)
+        station['timestamp'] = self.parse_date(station['timestamp'])
         return station
     
+    def parse_date(self, date_str):
+        try:
+            fmt = '%Y-%m-%dT%H:%M:%S.%fZ'
+            return datetime.datetime.strptime(date_str, fmt)
+        except ValueError:
+            fmt = '%Y-%m-%dT%H:%M:%SZ'
+            return datetime.datetime.strptime(date_str, fmt)
+
     def station_has_changed(self, station, model):
         if model.api_id == None or model.api_id == "":
             logging.info('Updating %s: this is a new entry', station['id'])
