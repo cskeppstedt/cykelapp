@@ -2,10 +2,17 @@
   "name": "cykelapp-frontend",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "^0.4.4",
     "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-coffee": "~0.10.1"
+    "grunt-contrib-coffee": "~0.10.1",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-processhtml": "~0.3.0",
+    "grunt-contrib-watch": "^0.5.3",
+    "grunt-contrib-less": "^0.10.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-bbb-requirejs": "0.1.0-alpha.6",
+    "grunt-bbb-styles": "0.1.0-alpha.5",
+    "grunt-bbb-server": "0.1.0-alpha.13",
+    "bbb": "~1.0.0-wip"
   }
 }
