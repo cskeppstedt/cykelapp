@@ -18,10 +18,11 @@ module.exports = (grunt) ->
         ]
 
     less:
-      options:
-        cleancss: true,
-      files:
-        'dist/styles.css': ['src/styles/**/*.less']
+      dist:
+        options:
+          cleancss: true,
+        files:
+          'dist/styles.css': ['src/styles/**/*.less']
 
     processhtml:
       dist:
@@ -32,21 +33,19 @@ module.exports = (grunt) ->
         files: [
           { src: "vendor/**", dest: "dist/" }
         ]
-
-    server:
-      options:
-        host: "0.0.0.0"
-        port: 8001
-      development: {}
-      dist:
-        options:
-          prefix: "dist"
     
+    connect:
+      server:
+        options:
+          open: true
+          base: 'dist'
+          hostname: 'localhost'
+
     watch:
       options:
         livereload: true
       src:
-        files: ['src/**/*.coffee']
+        files: ['src/**/*.coffee','src/**/*.less']
         tasks: ['default']
 
     requirejs:
@@ -75,14 +74,18 @@ module.exports = (grunt) ->
   
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-processhtml'
   grunt.loadNpmTasks 'grunt-bbb-requirejs'
-  grunt.loadNpmTasks 'grunt-bbb-server'
   grunt.loadNpmTasks 'grunt-contrib-watch'
 
   grunt.registerTask 'default', [
     'clean', 'coffee', 'less', 'copy', 'requirejs', 'processhtml'
+  ]
+
+  grunt.registerTask 'dev', [
+    'default', 'connect', 'watch'
   ]

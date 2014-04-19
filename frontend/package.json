@@ -12,7 +12,7 @@
     "grunt-contrib-copy": "~0.5.0",
     "grunt-bbb-requirejs": "0.1.0-alpha.6",
     "grunt-bbb-styles": "0.1.0-alpha.5",
-    "grunt-bbb-server": "0.1.0-alpha.13",
-    "bbb": "~1.0.0-wip"
+    "bbb": "~1.0.0-wip",
+    "grunt-contrib-connect": "^0.7.1"
   }
 }
