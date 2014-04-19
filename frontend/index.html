@@ -6,11 +6,39 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700' rel='stylesheet' type='text/css'>
     </head>
     <body>
+        <section class="navigator">
+            <div class="location" id="from">
+                <i class="fa fa-inverse fa-dot-circle-o"></i>
+                
+                <input type="text" />
+                <div class="selected" title="Select location...">
+                    <span class="name">Korsvägen / Södra Vägen and so on and so forth</span>
+                    <span class="description">(station)</span>
+                </div>
+            </div>
+            
+            <div class="divider">
+            </div>
+
+            <div class="location" id="to">
+                <i class="fa fa-inverse fa-map-marker"></i>
+
+                <input type="text" />
+                <div class="selected" title="Select location...">
+                    <span class="name">Chalmers Tvärgata</span>
+                    <span class="description">(station)</span>
+                </div>
+            </div>
+        </section>
+
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
         <script data-main="/src/main" src="/vendor/bower/requirejs/require.js"></script>
+        <script src="//localhost:35729/livereload.js"></script>
     </body>
 </html>
