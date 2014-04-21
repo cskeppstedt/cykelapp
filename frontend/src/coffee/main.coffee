@@ -12,6 +12,7 @@ requirejs.config
       exports: 'Backbone'
     backbonefixtures:
       deps: ['backbone', 'jquery']
+      exports: 'BackboneFixtures'
     #backbonemodelbinder:
     #  deps: ['backbone', 'jquery']
 

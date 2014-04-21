@@ -5,7 +5,7 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: pkg
 
-    clean: ['dist']
+    clean: ['temp', 'dist/']
 
     coffee:
       compile:
@@ -36,6 +36,11 @@ module.exports = (grunt) ->
         expand: true
         cwd:    'vendor/bower/backbone-fixtures/'
         src:    'backbone-fixtures.js'
+        dest:   'dist/vendor/'
+      almond:
+        expand: true
+        cwd:    'vendor/bower/almond/'
+        src:    'almond.js'
         dest:   'dist/vendor/'
       requirejs:
         expand: true
@@ -73,30 +78,57 @@ module.exports = (grunt) ->
           open: true
           hostname: 'localhost'
 
+    processhtml:
+      dist:
+        files:
+          "dist/index.html": ["index.html"]
+
     watch:
       options:
         livereload: true
-      coffee:
-        files: ['src/coffee/**/*.coffee']
-        tasks: ['reload']
-      gruntfile:
-        files: ['Gruntfile.coffee']
-        tasks: ['reload']
-      html:
-        files: ['index.html']
-        tasks: ['reload']
-      less:
-        files: ['src/less/**/*.less']
-        tasks: ['reload']
+      src:
+        files: ['src/**/*.coffee','src/**/*.less']
+        tasks: ['default']
+
+    requirejs:
+      dist:
+        options:
+          mainConfigFile: "dist/js/config.js"
+          generateSourceMaps: true
+          include: ["main"]
+          out: "dist/source.min.js"
+          optimize: "uglify2"
+
+          # Since we bootstrap with nested `require` calls this option allows
+          # R.js to find them.
+          findNestedDependencies: true
+
+          # Include a minimal AMD implementation shim.
+          name: "main"
+
+          # Setting the base url to the distribution directory allows the
+          # Uglify minification process to correctly map paths for source maps.
+          baseUrl: "dist/js"
+
+          # Wrap everything in an IIFE.
+          wrap: true
+          preserveLicenseComments: false
+  
 
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-less'
+  grunt.loadNpmTasks 'grunt-contrib-requirejs'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks 'grunt-preprocess'
+  grunt.loadNpmTasks 'grunt-processhtml'
 
-  grunt.registerTask 'build',   ['clean','coffee','less','preprocess','copy']
-  grunt.registerTask 'reload',  ['build']
-  grunt.registerTask 'default', ['build','connect', 'watch']
+  grunt.registerTask 'default', [
+    'clean', 'coffee', 'less', 'copy', 'requirejs', 'processhtml'
+  ]
+
+  grunt.registerTask 'dev', [
+    'default', 'connect', 'watch'
+  ]
