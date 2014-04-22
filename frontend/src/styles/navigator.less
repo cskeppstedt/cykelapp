@@ -1,3 +1,5 @@
+@import "colors.less";
+
 .navigator {
     @selected_border_color: #555;
     @bg_color: #202020;
@@ -72,13 +74,13 @@
                 content: " ";
                 display: block;
                 height: 3px;
-                border-left:   1px solid @selected_border_color;
-                border-right:  1px solid @selected_border_color;
-                border-bottom: 1px solid @selected_border_color;
+                border-left:   1px solid @colors_secondary_b_4;
+                border-right:  1px solid @colors_secondary_b_4;
+                border-bottom: 1px solid @colors_secondary_b_4;
             }
             
             .searchbox {
-                padding: 5px 5px 2px 5px;
+                padding: 5px 5px 3px 5px;
             }
 
             input {
@@ -89,6 +91,7 @@
                 border: 0;
                 font-size: 1.5em;
                 font-family: 'Source Sans Pro', sans-serif;
+                font-weight: 200;
                 outline: 0;
                 margin: 0;
                 padding: 0 0 0.9em 0;
@@ -96,21 +99,25 @@
 
             .results {
                 position: absolute;
-                background: @bg_color + #111;
+                background: @bg_color + #0a0a0a;
                 width: 100%;
                 left: 0;
                 margin-top: 1em;
                 z-index: 1000;
-
+                
                 section {
                     margin-left: 2.7em;
                     margin-right: 1em;
                     padding: 0.5em 0;
+                    
                     h2 {
                         padding: 5px;
                         margin: 0.3em 0;
                         border-bottom: 1px solid @selected_border_color;
                         font-weight: normal;
+                        font-size: 1em;
+                        font-weight: 700;
+                        color: @colors_complement_1;
                     }
 
                     ol {
@@ -122,6 +129,7 @@
                             margin: 0;
                             padding: 0;
                             a {
+                                font-size: 16px;
                                 display: block;
                                 padding: 5px;
                                 color: @fg_color;
