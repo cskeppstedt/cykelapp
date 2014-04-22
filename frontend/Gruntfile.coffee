@@ -87,7 +87,7 @@ module.exports = (grunt) ->
       options:
         livereload: true
       src:
-        files: ['src/**/*.coffee','src/**/*.less']
+        files: ['src/**/*.coffee','src/**/*.less','Gruntfile.coffee']
         tasks: ['default']
 
     requirejs:
@@ -96,7 +96,7 @@ module.exports = (grunt) ->
           mainConfigFile: "dist/js/config.js"
           generateSourceMaps: true
           include: ["main"]
-          out: "dist/source.min.js"
+          out: "dist/js/cykelapp.min.js"
           optimize: "uglify2"
 
           # Since we bootstrap with nested `require` calls this option allows
