@@ -62,6 +62,12 @@ module.exports = (grunt) ->
         cwd:    'vendor/bower/underscore/'
         src:    'underscore.js'
         dest:   'dist/vendor/'
+      fontawesome:
+        expand: true
+        cwd:    'vendor/'
+        src:    'font-awesome/**/*'
+        dest:   'dist/vendor/'
+
 
     preprocess:
       options:
