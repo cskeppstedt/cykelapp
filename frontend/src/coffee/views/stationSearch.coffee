@@ -1,9 +1,7 @@
-define ['backbone', 'views/stationSearchItem'], (Backbone, ItemView)->
+define ['backbone'], (Backbone)->
   Backbone.View.extend
-    tagName: 'ul'
     wait: 300
     currentText: ''
-    itemView: ItemView,
 
     initialize: (options) ->
       _.extend @, options
@@ -13,8 +11,14 @@ define ['backbone', 'views/stationSearchItem'], (Backbone, ItemView)->
        keyword = keyword.toLowerCase()
 
     render: ->
-      tmpl = _.template $('#station-search-template').html()
+      tmpl = _.template $('#location-template').html()
       
       @$el.html tmpl
         header: @header
         val: @el
+
+    openSearch: ->
+      @$el.find('.location').addClass 'focus'
+
+    events:
+      'click .location': 'openSearch'

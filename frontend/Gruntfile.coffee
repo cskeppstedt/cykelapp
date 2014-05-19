@@ -87,7 +87,7 @@ module.exports = (grunt) ->
       options:
         livereload: true
       src:
-        files: ['src/**/*.coffee','src/**/*.less','Gruntfile.coffee']
+        files: ['src/**/*.coffee','src/**/*.less','Gruntfile.coffee','index.html']
         tasks: ['default']
 
     requirejs:

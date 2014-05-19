@@ -16,4 +16,4 @@ requirejs.config
 require ['backbone', 'backbonefixtures', 'app'], (Backbone, BackboneFixtures, App) ->
   Backbone.fixtures = true
   Backbone.fixturesRoot = '../fixtures/'
-  App()
+  App.init()
