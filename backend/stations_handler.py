@@ -2,8 +2,8 @@ import json
 import webapp2
 from google.appengine.api import memcache
 from google.appengine.ext import ndb
-from models.station_model import StationModel
-from webapp.api_request_handler import ApiRequestHandler
+from backend.models.station_model import StationModel
+from backend.api_request_handler import ApiRequestHandler
 
 
 class StationsHandler(ApiRequestHandler):

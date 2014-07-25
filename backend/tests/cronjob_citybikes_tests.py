@@ -4,15 +4,15 @@ import webapp2
 import webtest
 from google.appengine.api import memcache
 from google.appengine.ext import ndb, testbed
-from cronjobs.cronjobs_app import CronjobsApp
-from webapp.station_handler import StationHandler
-from models.station_model import StationModel
-from cronjobs.citybikes_handler import CitybikesHandler
+from backend.station_handler import StationHandler
+from backend.models.station_model import StationModel
+from backend.cronjobs.cronjobs_app import CronjobsApp
+from backend.cronjobs.citybikes_handler import CitybikesHandler
 
 
 class CitybikesTestApi:
     def get_station_objects(self):
-        f = open('tests/goeteborg.json', 'r')
+        f = open('backend/tests/goeteborg.json', 'r')
         stations = json.load(f)
         f.close()
         return stations
@@ -23,7 +23,7 @@ class CronjobCitybikesTests(unittest.TestCase):
         app = CronjobsApp()
         self.testapp = webtest.TestApp(app.make_app())
         CitybikesHandler.api_service = CitybikesTestApi()
-        
+
         # set up the testbed
         self.testbed = testbed.Testbed()
         self.testbed.activate()

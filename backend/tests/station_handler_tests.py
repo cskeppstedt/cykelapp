@@ -4,9 +4,9 @@ import webapp2
 import webtest
 from google.appengine.api import memcache
 from google.appengine.ext import ndb, testbed
-from webapp.cykel_app import CykelApp
-from webapp.stations_handler import StationsHandler
-from models.station_model import StationModel
+from backend.cykel_app import CykelApp
+from backend.station_handler import StationHandler
+from backend.models.station_model import StationModel
 
 
 class StationsHandlerTests(unittest.TestCase):
@@ -14,7 +14,7 @@ class StationsHandlerTests(unittest.TestCase):
         # set up the test app
         app = CykelApp()
         self.testapp = webtest.TestApp(app.make_app())
-        
+
         # set up the testbed
         self.testbed = testbed.Testbed()
         self.testbed.activate()
@@ -28,13 +28,15 @@ class StationsHandlerTests(unittest.TestCase):
     def tearDown(self):
         self.testbed.deactivate()
 
-    def testGetStations(self):
-        response = self.testapp.get('/api/stations')
+    def testGetStation(self):
+        response = self.testapp.get('/api/stations/2')
         self.assertEqual(response.status_int, 200)
-        
+
         decoded = json.loads(response.body)
         self.assertIsNotNone(decoded)
 
-        stations = decoded['stations']
-        self.assertIsNotNone(stations)
-        self.assertEqual(len(stations), 3)
+        station = decoded['station']
+        self.assertIsNotNone(station)
+        self.assertIsNotNone(station["api_id"])
+        self.assertEqual(station["api_id"], "2")
+

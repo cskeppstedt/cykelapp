@@ -7,7 +7,7 @@ import webapp2
 from hashlib import md5
 from google.appengine.api import memcache
 from google.appengine.ext import ndb
-from models.station_model import StationModel
+from backend.models.station_model import StationModel
 
 
 class CitybikesApi:
@@ -28,7 +28,7 @@ class CitybikesApi:
 
 class CitybikesHandler(webapp2.RequestHandler):
     api_service = CitybikesApi()
-    
+
     def get(self):
         stations = self.api_service.get_station_objects()
         for s in stations:
@@ -48,7 +48,7 @@ class CitybikesHandler(webapp2.RequestHandler):
     def format_station(self, station):
         lat = float(station['lat']) / 1000000.0
         lon = float(station['lng']) / 1000000.0
-        
+
 
         station['name'] = station['name'].strip().title()
         station['id'] = str(station['id'])
@@ -57,7 +57,7 @@ class CitybikesHandler(webapp2.RequestHandler):
         station['location'] = ndb.GeoPt(lat,lon)
         station['timestamp'] = self.parse_date(station['timestamp'])
         return station
-    
+
     def parse_date(self, date_str):
         try:
             fmt = '%Y-%m-%dT%H:%M:%S.%fZ'

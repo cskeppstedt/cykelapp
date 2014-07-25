@@ -6,16 +6,16 @@ threadsafe: true
 
 handlers:
 - url: /cronjobs/.*
-  script: cronjobs.cronjobs_app.application
+  script: backend.cronjobs.cronjobs_app.application
   login: admin
 
 - url: /favicon.ico
-  static_files: static/favicon.ico
-  upload: static/favicon.ico
+  static_files: frontend/static/favicon.ico
+  upload: frontend/static/favicon.ico
 
 - url: /robots.txt
-  static_files: static/robots.txt
-  upload: static/robots.txt
+  static_files: frontend/static/robots.txt
+  upload: frontend/static/robots.txt
 
 - url: /css/(.*\.css)
   mime_type: text/css
@@ -33,7 +33,7 @@ handlers:
   upload: frontend/html/(.*\.html)
 
 - url: /api/.*
-  script: webapp.cykel_app.application
+  script: backend.cykel_app.application
 
 - url: /
   static_files: frontend/html/index.html
