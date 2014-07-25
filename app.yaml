@@ -36,8 +36,8 @@ handlers:
   script: backend.cykel_app.application
 
 - url: /
-  static_files: frontend/html/index.html
-  upload: frontend/html/index.html
+  static_files: frontend/index.html
+  upload: frontend/index.html
 
 libraries:
 - name: webapp2
