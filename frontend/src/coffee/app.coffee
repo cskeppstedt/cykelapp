@@ -1,4 +1,4 @@
-define ['backbone', 'router', 'collections/stations', 'views/navigator', 'views/map', 'views/stationSearch'], (Backbone, Router, StationsCollection, NavigatorView, MapView, StationSearchView) ->
+define ['vendor/backbone', 'router', 'collections/stations', 'views/navigator', 'views/map', 'views/stationSearch'], (Backbone, Router, StationsCollection, NavigatorView, MapView, StationSearchView) ->
   navView  = new NavigatorView()
   mapView  = new MapView()
   stations = new StationsCollection()

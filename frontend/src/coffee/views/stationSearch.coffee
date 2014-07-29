@@ -1,4 +1,4 @@
-define ['backbone'], (Backbone)->
+define ['vendor/backbone', 'vendor/underscore'], (Backbone, _)->
   Backbone.View.extend
     wait: 300
     currentText: ''
@@ -12,7 +12,7 @@ define ['backbone'], (Backbone)->
 
     render: ->
       tmpl = _.template $('#location-template').html()
-      
+
       @$el.html tmpl
         header: @header
         val: @el

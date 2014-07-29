@@ -1,4 +1,4 @@
-define ['backbone'], (Backbone) ->
+define ['vendor/backbone', 'vendor/underscore'], (Backbone, _) ->
   Backbone.View.extend
     tagName: 'li'
     template: '<%= name %>'

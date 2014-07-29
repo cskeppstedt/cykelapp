@@ -5,6 +5,9 @@
     "mocha": "1.13.x",
     "requirejs": "2.1.x",
     "almond": "~0.2.9",
-    "backbone-fixtures": "*"
+    "backbone-fixtures": "*",
+    "underscore": "~1.6.0",
+    "backbone": "~1.1.2",
+    "jquery": "components/jquery#~2.1.1"
   }
 }

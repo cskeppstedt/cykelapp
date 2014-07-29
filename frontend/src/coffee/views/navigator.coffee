@@ -1,13 +1,13 @@
-define ['backbone', 'collections/stations', 'views/stationSearch'], (Backbone, StationsCollection, StationSearch) ->
+define ['vendor/backbone', 'collections/stations', 'views/stationSearch'], (Backbone, StationsCollection, StationSearch) ->
   Backbone.View.extend
     el: '#navigator'
-    
+
     initialize: ->
       @collection = new StationsCollection()
 
     render: ->
       console.log 'navigator render'
-      
+
       fromSearch = new StationSearch
         collection: @collection
         header: 'From'
@@ -17,7 +17,7 @@ define ['backbone', 'collections/stations', 'views/stationSearch'], (Backbone, S
         collection: @collection
         header: 'To'
         el: '#station-to'
-      
+
       fromSearch.render()
       toSearch.render()
 

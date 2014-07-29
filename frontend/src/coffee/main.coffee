@@ -1,19 +1,19 @@
 requirejs.config
-  paths:
-    #backbonemodelbinder: 'http://cdnjs.cloudflare.com/ajax/libs/backbone.modelbinder/1.0.5/Backbone.ModelBinder.min'
-    backbonefixtures: '../vendor/backbone-fixtures'
-
   shim:
-    backbone:
-      deps: ['underscore', 'jquery']
+    'vendor/backbone':
+      deps: ['vendor/underscore', 'vendor/jquery']
       exports: 'Backbone'
-    backbonefixtures:
-      deps: ['backbone', 'jquery']
+    'vendor/backbone-fixtures':
+      deps: ['vendor/backbone', 'vendor/jquery']
       exports: 'BackboneFixtures'
-    #backbonemodelbinder:
-    #  deps: ['backbone', 'jquery']
+    'vendor/underscore':
+      exports: '_'
+  map:
+    '*':
+      'underscore': 'vendor/underscore'
 
-require ['backbone', 'backbonefixtures', 'app'], (Backbone, BackboneFixtures, App) ->
+
+require ['vendor/backbone', 'vendor/backbone-fixtures', 'app'], (Backbone, BackboneFixtures, App) ->
   Backbone.fixtures = true
-  Backbone.fixturesRoot = '../fixtures/'
+  Backbone.fixturesRoot = '/fixtures/'
   App.init()

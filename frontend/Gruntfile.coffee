@@ -18,7 +18,7 @@ module.exports = (grunt) ->
           src: '**/*.coffee'
           ext: '.js'
         ]
-    
+
     less:
       dist:
         options:
@@ -32,36 +32,19 @@ module.exports = (grunt) ->
         cwd:    'src/'
         src:    ['fixtures/**']
         dest:   'dist/'
-      backbonefixtures:
+      vendor:
         expand: true
-        cwd:    'vendor/bower/backbone-fixtures/'
-        src:    'backbone-fixtures.js'
-        dest:   'dist/vendor/'
-      almond:
-        expand: true
-        cwd:    'vendor/bower/almond/'
-        src:    'almond.js'
-        dest:   'dist/vendor/'
-      requirejs:
-        expand: true
-        cwd:    'vendor/bower/requirejs/'
-        src:    'require.js'
-        dest:   'dist/vendor/'
-      backbone:
-        expand: true
-        cwd:    'vendor/bower/backbone/'
-        src:    'backbone.js'
-        dest:   'dist/vendor/'
-      jquery:
-        expand: true
-        cwd:    'vendor/bower/jquery/'
-        src:    'jquery.js'
-        dest:   'dist/vendor/'
-      underscore:
-        expand: true
-        cwd:    'vendor/bower/underscore/'
-        src:    'underscore.js'
-        dest:   'dist/vendor/'
+        flatten: true
+        cwd: 'vendor/bower/'
+        dest: 'dist/js/vendor/'
+        src: [
+          'backbone-fixtures/backbone-fixtures.js'
+          'almond/almond.js'
+          'requirejs/require.js'
+          'backbone/backbone.js'
+          'underscore/underscore.js'
+          'jquery/jquery.js'
+        ]
       fontawesome:
         expand: true
         cwd:    'vendor/'
@@ -76,13 +59,14 @@ module.exports = (grunt) ->
       html:
         src:  'index.html'
         dest: 'dist/index.html'
-        
+
     connect:
       server:
         options:
           base: 'dist'
           open: true
           hostname: 'localhost'
+          port: 8001
 
     processhtml:
       dist:
@@ -99,7 +83,6 @@ module.exports = (grunt) ->
     requirejs:
       dist:
         options:
-          mainConfigFile: "dist/js/config.js"
           generateSourceMaps: true
           include: ["main"]
           out: "dist/js/cykelapp.min.js"
@@ -119,7 +102,7 @@ module.exports = (grunt) ->
           # Wrap everything in an IIFE.
           wrap: true
           preserveLicenseComments: false
-  
+
 
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
@@ -131,10 +114,19 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-processhtml'
 
+
   grunt.registerTask 'default', [
-    'clean', 'coffee', 'less', 'copy', 'requirejs', 'processhtml'
+    'clean'
+    'coffee'
+    'less'
+    'copy'
+    #'requirejs'
+    'processhtml'
   ]
 
+
   grunt.registerTask 'dev', [
-    'default', 'connect', 'watch'
+    'default'
+    'connect'
+    'watch'
   ]
