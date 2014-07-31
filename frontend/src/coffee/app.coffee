@@ -1,11 +1,16 @@
-define ['vendor/backbone', 'router', 'collections/stations', 'views/navigator', 'views/map', 'views/stationSearch'], (Backbone, Router, StationsCollection, NavigatorView, MapView, StationSearchView) ->
+define [
+  'vendor/backbone'
+  'router'
+  'collections/stations'
+  'views/navigator'
+  'views/map'
+], (Backbone, Router, StationsCollection, NavigatorView, MapView) ->
+
+  'use strict'
+
   navView  = new NavigatorView()
   mapView  = new MapView()
   stations = new StationsCollection()
-
-  # searchView = new StationSearchView
-  #   input: $('searchbox')
-  #   model: stations
 
   init = () ->
     router = new Router()
@@ -13,7 +18,6 @@ define ['vendor/backbone', 'router', 'collections/stations', 'views/navigator', 
     router.on 'route:home', ->
       navView.render()
       mapView.render()
-      # searchView.render()
 
     Backbone.history.start()
 

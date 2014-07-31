@@ -11,9 +11,9 @@
     </head>
     <body>
         <div class="container">
-            <section>
-                <div class="navigator" id="station-from"></div>
-                <div class="navigator" id="station-to"></div>
+            <section id="navigator">
+                <div class="station-finder" id="station-from"></div>
+                <div class="station-finder" id="station-to"></div>
             </section>
             <section id="map"></section>
         </div>
@@ -41,8 +41,7 @@
                 <h2><%= title %></h2>
                 <ol>
                     <% _.each(items, function(i) { %>
-                        <li><a href="#">Vasagatan</a></li>
-                        <li><a href="#">Chalmers</a></li>
+                        <li><a href="#"><%= i.value %></a></li>
                     <% }); %>
                 </ol>
             </section>

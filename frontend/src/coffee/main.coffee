@@ -8,12 +8,21 @@ requirejs.config
       exports: 'BackboneFixtures'
     'vendor/underscore':
       exports: '_'
+    'vendor/typeahead.bundle':
+      deps: ['vendor/jquery']
   map:
     '*':
       'underscore': 'vendor/underscore'
 
 
-require ['vendor/backbone', 'vendor/backbone-fixtures', 'app'], (Backbone, BackboneFixtures, App) ->
+require [
+  'vendor/backbone'
+  'vendor/backbone-fixtures'
+  'app'
+], (Backbone, BackboneFixtures, App) ->
+
+  'use strict'
+
   Backbone.fixtures = true
   Backbone.fixturesRoot = '/fixtures/'
   App.init()

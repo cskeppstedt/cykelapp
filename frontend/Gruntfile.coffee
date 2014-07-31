@@ -44,6 +44,7 @@ module.exports = (grunt) ->
           'backbone/backbone.js'
           'underscore/underscore.js'
           'jquery/jquery.js'
+          'typeahead.js/dist/typeahead.bundle.js'
         ]
       fontawesome:
         expand: true
