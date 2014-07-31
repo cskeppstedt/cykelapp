@@ -47,9 +47,12 @@ module.exports = (grunt) ->
         ]
       fontawesome:
         expand: true
-        cwd:    'vendor/'
-        src:    'font-awesome/**/*'
-        dest:   'dist/vendor/'
+        cwd: 'vendor/bower/components-font-awesome/'
+        src: [
+          'css/font-awesome.min.css'
+          'fonts/**/*'
+        ]
+        dest: 'dist/css/vendor/font-awesome/'
 
 
     preprocess:
